@@ -13,5 +13,11 @@ enum MAILTABS{
     VIEW = 'view',
 }
 
+enum DEPOSIT_TABS {
+    REQUESTS = 'requests',
+    PROCESSED  = 'processed',
+    DENIED = 'denied',
+}
 
-export { HOMETABS, EVENTMANAGETABS, MAILTABS };
+
+export { HOMETABS, EVENTMANAGETABS, MAILTABS, DEPOSIT_TABS };

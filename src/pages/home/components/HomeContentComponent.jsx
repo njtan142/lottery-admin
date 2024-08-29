@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import HomeContent from './contents/home/HomeContent';
 import AccountsContent from './contents/users/AccountsContent'
+import DepositsContent from './contents/deposits/DepositsContent';
 
 function HomeContentComponent({
   selectedTab,
@@ -24,6 +25,8 @@ function HomeContentComponent({
             return <HomeContent />;
           case 102:
             return <AccountsContent />;
+          case 105:
+            return <DepositsContent />;
           default:
             return <div>Loading...</div>;
         }
