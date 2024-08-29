@@ -110,7 +110,7 @@ const Field = styled.div`
         padding:1em;
         border-radius: 5px;
         border: none;
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid ${Palette.Secondary200};
         background-color: ${Palette.Background100};
     }
 
