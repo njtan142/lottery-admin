@@ -8,6 +8,7 @@ import { signOut } from 'firebase/auth';
 import { Palette } from '../../../../../shared/styled/theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { ROLES } from '../../../../../settings/constants';
 
 function AccountsContent() { // Templated
   const [accounts, setAccounts] = useState([]);
@@ -144,6 +145,7 @@ function AccountsContent() { // Templated
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>Email</TableCell>
+            <TableCell>Roles</TableCell>
             <TableCell>Actions</TableCell>
           </TableRow>
         </TableHead>
@@ -152,6 +154,7 @@ function AccountsContent() { // Templated
             <TableRow key={account.id}>
               <TableCell>{`${account.firstName} ${account.lastName}`}</TableCell>
               <TableCell>{account.email}</TableCell>
+              <TableCell>{account.privilege[ROLES.ADMIN] ? "Admin" : '  ' + account.privilege[ROLES.USER] ? "User" : ""}</TableCell>
               <TableCell className='flex gap-1'>
                 <ActionButton disabled={isModalOpened} onClick={() => {
                     handleEditModalOpen(account);
