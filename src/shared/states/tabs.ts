@@ -1,8 +1,6 @@
 enum HOMETABS{
     DASHBOARD = 'dashboard',
-    GENERAL = 'general',
-    PHOTOS = 'photos',
-    TEAM = 'team',
+    ANALYTICS = 'analytics',
 }
 enum EVENTMANAGETABS{
     ATTENDEES = 'attendees',    
@@ -14,4 +12,6 @@ enum MAILTABS{
     COMPOSE = 'compose',
     VIEW = 'view',
 }
+
+
 export { HOMETABS, EVENTMANAGETABS, MAILTABS };

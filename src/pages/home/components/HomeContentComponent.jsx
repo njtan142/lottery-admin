@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import HomeContent from './contents/HomeContent'
-import AccountsContent from './contents/admin_accounts/AccountsContent';
+import HomeContent from './contents/home/HomeContent';
+import AccountsContent from './contents/users/AccountsContent'
 
 function HomeContentComponent({
   selectedTab,
