@@ -28,13 +28,13 @@ function HomePage() {
         /**
          * TODO: Uncomment this to check if the user is logged in
          */
-        // onAuthStateChanged(auth, (user) => {
-        //     if (user) {
-        //         setLoggedIn(AsyncBoolean.TRUE)
-        //     } else {
-        //         setLoggedIn(AsyncBoolean.FALSE)
-        //     }
-        // })
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setLoggedIn(AsyncBoolean.TRUE)
+            } else {
+                setLoggedIn(AsyncBoolean.FALSE)
+            }
+        })
         setLoggedIn(AsyncBoolean.TRUE)
     }, [])
 
@@ -59,7 +59,9 @@ function HomePage() {
         setUserData({});
     }
 
-    const handleSignOut = () => {
+    const handleSignOut = async () => {
+        await signOut(auth)
+        console.log("signed out")
         setLoggedIn(AsyncBoolean.FALSE)
     }
 
