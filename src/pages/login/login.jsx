@@ -4,10 +4,12 @@ import Card from '../../shared/styled/card';
 /**
  * TODO: Uncomment the following code to authenticate the user
  */
-// import { authenticateUser } from './function';
-// import { auth } from '../../apis/firebase/firebase';
+import { authenticateUser, checkUserPrivilege } from './function';
+import { auth, firestore } from '../../apis/firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import { Palette } from '../../shared/styled/theme';
+import { getDocument } from '../../shared/functions/database';
+import { ROLES } from '../../settings/constants';
 
 
 function LoginPage() { //Templated
@@ -24,11 +26,15 @@ function LoginPage() { //Templated
             /**
              * TODO: Uncomment the following code to authenticate the user
              */
-            // const userCredential = await authenticateUser(auth, email, password)
-            // if (!userCredential.user) {
-            //     return
-            // }
-            navigate('/');
+            const userCredential = await authenticateUser(auth, email, password)
+            if (!userCredential.user) {
+                return
+            }
+            const userData = await getDocument(firestore, 'users', userCredential.user.uid);
+            const isAdmin = await checkUserPrivilege(userData, ROLES.ADMIN)
+            if(isAdmin){
+                navigate('/');
+            }
         } catch (error) {
             console.error(error)
             setError(error.code)

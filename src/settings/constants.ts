@@ -1,7 +1,6 @@
 export enum ROLES {
     ADMIN = `admin`,
     USER = `user`,
-    ORG_LEAD = `organizer`,
 }
 
 
