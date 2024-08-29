@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components";
 import Card from '../../shared/styled/card';
 /**
@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import { Palette } from '../../shared/styled/theme';
 import { getDocument } from '../../shared/functions/database';
 import { ROLES } from '../../settings/constants';
+import { onAuthStateChanged } from 'firebase/auth';
+import { ca } from 'date-fns/locale';
 
 
 function LoginPage() { //Templated
@@ -30,16 +32,32 @@ function LoginPage() { //Templated
             if (!userCredential.user) {
                 return
             }
-            const userData = await getDocument(firestore, 'users', userCredential.user.uid);
-            const isAdmin = await checkUserPrivilege(userData, ROLES.ADMIN)
-            if(isAdmin){
-                navigate('/');
-            }
+            checkUser(userCredential.user)
         } catch (error) {
             console.error(error)
             setError(error.code)
         } finally {
             setIsLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                checkUser(user)
+            }
+        })
+    }, [])
+
+    const checkUser = async (user) => {
+        try {
+            const userData = await getDocument(firestore, 'users', user.uid);
+            const isAdmin = await checkUserPrivilege(userData, ROLES.ADMIN)
+            if (isAdmin) {
+                navigate('/');
+            }
+        } catch (e) {
+            throw (e)
         }
     }
 
