@@ -6,6 +6,8 @@ import { Palette } from '../../../shared/styled/theme';
 function HomeSidebarComponent({ selectedTab, setSelectedTab, specialTabs, deleteSpecialTab, inEditMode, setInEditMode, userData, header }) {
   const containerRef = useRef(null);
 
+
+
   useEffect(() => {
     /**
      * Do something if it needs to be changed
@@ -40,7 +42,6 @@ function HomeSidebarComponent({ selectedTab, setSelectedTab, specialTabs, delete
     setSelectedTab(index);
   };
 
-
   return (
     <Container ref={containerRef}>
       {
@@ -54,11 +55,19 @@ function HomeSidebarComponent({ selectedTab, setSelectedTab, specialTabs, delete
       <ResizeHandle onMouseDown={startResizing} />
       <TabItem title="Home" selected={selectedTab === 101} onClick={() => handleSelect(101)} />
       <TabItem title="Users" selected={selectedTab === 102} onClick={() => handleSelect(102)} />
+      <TabItem title="Announcements" selected={selectedTab === 103} onClick={() => handleSelect(103)} />
+      <TabItem title="Lotteries" selected={selectedTab === 104} onClick={() => handleSelect(104)} />
+      <TabItem title="Deposit" selected={selectedTab === 105} onClick={() => handleSelect(105)} />
+      <TabItem title="Withdrawal" selected={selectedTab === 106} onClick={() => handleSelect(106)} />
+      <TabItem title="Wallet" selected={selectedTab === 107} onClick={() => handleSelect(107)} />
+      <TabItem title="Transactions" selected={selectedTab === 108} onClick={() => handleSelect(108)} />
+      <TabItem title="Settings" selected={selectedTab === 109} onClick={() => handleSelect(109)} />
       {specialTabs.map((tab) => {
         return <TabItem key={tab.id} title={tab.name} selected={selectedTab === tab.id} onClick={() => handleSelect(tab.id)} onDelete={() => deleteSpecialTab(tab)} id={tab.id} />
       })}
     </Container>
   )
+
 }
 
 const Container = styled.div`
