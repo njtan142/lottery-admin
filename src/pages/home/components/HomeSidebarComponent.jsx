@@ -56,7 +56,9 @@ function HomeSidebarComponent({ selectedTab, setSelectedTab, specialTabs, delete
       <TabItem title="Home" selected={selectedTab === 101} onClick={() => handleSelect(101)} />
       <TabItem title="Users" selected={selectedTab === 102} onClick={() => handleSelect(102)} />
       <TabItem title="Announcements" selected={selectedTab === 103} onClick={() => handleSelect(103)} />
-      <TabItem title="Lotteries" selected={selectedTab === 104} onClick={() => handleSelect(104)} />
+      <TabItem title="Lottery" selected={selectedTab === 104} onClick={() => handleSelect(104)} />
+      <TabItem title="Provinces" selected={selectedTab === 104} onClick={() => handleSelect(104)} />
+      <TabItem title="Results" selected={selectedTab === 104} onClick={() => handleSelect(104)} />
       <TabItem title="Deposit" selected={selectedTab === 105} onClick={() => handleSelect(105)} />
       <TabItem title="Withdrawal" selected={selectedTab === 106} onClick={() => handleSelect(106)} />
       <TabItem title="Wallet" selected={selectedTab === 107} onClick={() => handleSelect(107)} />

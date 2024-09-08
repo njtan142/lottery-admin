@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import HomeContent from './contents/home/HomeContent';
 import AccountsContent from './contents/users/AccountsContent'
 import DepositsContent from './contents/deposits/DepositsContent';
+import WithdrawsContent from './contents/withdraws/WithdrawsContent';
 
 function HomeContentComponent({
   selectedTab,
@@ -27,6 +28,8 @@ function HomeContentComponent({
             return <AccountsContent />;
           case 105:
             return <DepositsContent />;
+          case 106:
+            return <WithdrawsContent />;
           default:
             return <div>Loading...</div>;
         }

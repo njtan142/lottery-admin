@@ -152,7 +152,7 @@ function AccountsContent() { // Templated
         <tbody>
           {(searchTerm.length > 0 ? filteredAccounts : accounts).map((account) => (
             <TableRow key={account.id}>
-              <TableCell>{`${account.firstName} ${account.lastName}`}</TableCell>
+              <TableCell>{account.name != null ? `${account.name}` : `${account.firstName} ${account.lastName}`}</TableCell>
               <TableCell>{account.email}</TableCell>
               <TableCell>{account.privilege[ROLES.ADMIN] ? "Admin" : '  ' + account.privilege[ROLES.USER] ? "User" : ""}</TableCell>
               <TableCell className='flex gap-1'>
