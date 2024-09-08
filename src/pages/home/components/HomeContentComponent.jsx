@@ -4,6 +4,7 @@ import HomeContent from './contents/home/HomeContent';
 import AccountsContent from './contents/users/AccountsContent'
 import DepositsContent from './contents/deposits/DepositsContent';
 import WithdrawsContent from './contents/withdraws/WithdrawsContent';
+import LotteryContent from './contents/lottery/LotteryContent';
 
 function HomeContentComponent({
   selectedTab,
@@ -26,6 +27,8 @@ function HomeContentComponent({
             return <HomeContent />;
           case 102:
             return <AccountsContent />;
+          case 104:
+            return <LotteryContent />;
           case 105:
             return <DepositsContent />;
           case 106:
