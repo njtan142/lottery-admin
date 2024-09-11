@@ -17,7 +17,7 @@ import Title from './title';
 
 
 function HomePage() {
-    const [selectedTab, setSelectedTab] = useState(101); //100 for admin, 200 for organizer
+    const [selectedTab, setSelectedTab] = useState(101); 
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState(AsyncBoolean.CHECKING)
     const [userData, setUserData] = useState(null);
@@ -25,9 +25,6 @@ function HomePage() {
     const [inEditMode, setInEditMode] = useState(false);
 
     useEffect(() => { //check if the user is logged in
-        /**
-         * TODO: Uncomment this to check if the user is logged in
-         */
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setLoggedIn(AsyncBoolean.TRUE)
