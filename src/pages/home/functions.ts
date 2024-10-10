@@ -1,10 +1,10 @@
-import { Auth, Unsubscribe, UserCredential, createUserWithEmailAndPassword } from "firebase/auth";
-import { CollectionReference, DocumentReference, Firestore, QuerySnapshot, WhereFilterOp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, query, setDoc, updateDoc, where } from "firebase/firestore";
-import { FirebaseStorage, StorageReference, deleteObject, getDownloadURL, listAll, ref, uploadBytes, uploadBytesResumable } from "firebase/storage";
+import { Auth, Unsubscribe, UserCredential, createUserWithEmailAndPassword } from "@firebase/auth";
+import { CollectionReference, DocumentReference, Firestore, QuerySnapshot, WhereFilterOp, addDoc, collection, deleteDoc, doc, getDocs, onSnapshot, query, setDoc, updateDoc, where } from "@firebase/firestore";
+import { FirebaseStorage, StorageReference, deleteObject, getDownloadURL, listAll, ref, uploadBytes, uploadBytesResumable } from "@firebase/storage";
 import { firestore } from "../../apis/firebase/firebase";
 import { listenToCollectionChanges } from "../../shared/functions/database";
 
-const checkLoggedIn = (auth: import("firebase/auth").Auth): boolean => {
+const checkLoggedIn = (auth: import("@firebase/auth").Auth): boolean => {
     try {
         const currentUser = auth.currentUser;
         return !!currentUser;

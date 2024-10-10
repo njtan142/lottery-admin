@@ -4,7 +4,7 @@ import { listenToCollectionChanges, filterMapListByValue, registerUser, saveData
 import { auth, firestore, getTemporaryAuth } from '../../../../../apis/firebase/firebase';
 import AccountRegisterModal from './AccountRegisterModal';
 import AccountEditModal from './AccountEditModal';
-import { signOut } from 'firebase/auth';
+import { signOut } from '@firebase/auth';
 import { Palette } from '../../../../../shared/styled/theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';

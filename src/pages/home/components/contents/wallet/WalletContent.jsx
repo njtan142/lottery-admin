@@ -4,7 +4,7 @@ import { WALLET_TABS } from '../../../../../shared/states/tabs'
 import { Palette } from '../../../../../shared/styled/theme'
 import styled from 'styled-components'
 import WithdrawsContent from './tabs/withdraws/WithdrawsContent'
-import DepositsContent from '../deposits/DepositsContent'
+import DepositsContent from './tabs/deposits/DepositsContent'
 import TransactionsContent from './tabs/transactions/TransactionsContent'
 
 function WalletContent() {

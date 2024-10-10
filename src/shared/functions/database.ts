@@ -1,4 +1,4 @@
-import { CollectionReference, DocumentData, DocumentReference, Firestore, collection, doc, getDoc, onSnapshot } from "firebase/firestore";
+import { CollectionReference, DocumentData, DocumentReference, Firestore, collection, doc, getDoc, onSnapshot } from "@firebase/firestore";
 
 const getDocument = async (firestore: Firestore, collection: string | CollectionReference, docId: string) : Promise<Object> => {
     try {

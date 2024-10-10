@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { Palette } from '../../shared/styled/theme';
 import { getDocument } from '../../shared/functions/database';
 import { ROLES } from '../../settings/constants';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from '@firebase/auth';
 import { ca } from 'date-fns/locale';
 
 

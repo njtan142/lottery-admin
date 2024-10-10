@@ -9,9 +9,8 @@ import HomeContentComponent from './components/HomeContentComponent';
 import { getDocument } from '@/shared/functions/database';
 import { checkMultipleUserPrivileges } from '../../shared/functions/data';
 import { ROLES, VIEWMODE } from '../../settings/constants';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from '@firebase/auth';
 import AsyncBoolean from '../../shared/states/async_boolean';
-import { collection, doc, onSnapshot } from 'firebase/firestore';
 import ProfileFAB from './ProfileFAB';
 import Title from './title';
 

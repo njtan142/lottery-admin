@@ -1,7 +1,6 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { UserCredential } from "firebase/auth";
-import { Auth } from "firebase/auth";
-import { getDoc, doc, Firestore, CollectionReference, DocumentReference, DocumentData } from "firebase/firestore";
+import { signInWithEmailAndPassword } from "@firebase/auth";
+import { UserCredential } from "@firebase/auth";
+import { Auth } from "@firebase/auth";
 import { ROLES } from "../../settings/constants";
 
 const authenticateUser = async (auth: Auth, email: string, password: string) : Promise<UserCredential> => {
