@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import HomeContent from './contents/home/HomeContent';
 import AccountsContent from './contents/users/AccountsContent'
-import DepositsContent from './contents/deposits/DepositsContent';
-import WithdrawsContent from './contents/withdraws/WithdrawsContent';
 import LotteryContent from './contents/lottery/LotteryContent';
+import WalletContent from './contents/wallet/WalletContent';
+import AnnouncementsContent from './contents/announcements/AnnouncementsContent';
 
 function HomeContentComponent({
   selectedTab,
@@ -27,12 +27,12 @@ function HomeContentComponent({
             return <HomeContent />;
           case 102:
             return <AccountsContent />;
+          case 103:
+            return <AnnouncementsContent />;
           case 104:
             return <LotteryContent />;
           case 105:
-            return <DepositsContent />;
-          case 106:
-            return <WithdrawsContent />;
+            return <WalletContent />;
           default:
             return <div>Loading...</div>;
         }

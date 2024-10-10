@@ -57,13 +57,13 @@ function HomeSidebarComponent({ selectedTab, setSelectedTab, specialTabs, delete
       <TabItem title="Users" selected={selectedTab === 102} onClick={() => handleSelect(102)} />
       <TabItem title="Announcements" selected={selectedTab === 103} onClick={() => handleSelect(103)} />
       <TabItem title="Lottery" selected={selectedTab === 104} onClick={() => handleSelect(104)} />
+      <TabItem title="Wallet" selected={selectedTab === 105} onClick={() => handleSelect(105)} />
       {/* <TabItem title="Provinces" selected={selectedTab === 104} onClick={() => handleSelect(104)} /> */}
-      {/* <TabItem title="Results" selected={selectedTab === 104} onClick={() => handleSelect(104)} />
-      <TabItem title="Deposit" selected={selectedTab === 105} onClick={() => handleSelect(105)} />
-      <TabItem title="Withdrawal" selected={selectedTab === 106} onClick={() => handleSelect(106)} />
-      <TabItem title="Wallet" selected={selectedTab === 107} onClick={() => handleSelect(107)} />
-      <TabItem title="Transactions" selected={selectedTab === 108} onClick={() => handleSelect(108)} />
-      <TabItem title="Settings" selected={selectedTab === 109} onClick={() => handleSelect(109)} /> */}
+      {/* <TabItem title="Results" selected={selectedTab === 104} onClick={() => handleSelect(104)} /> */}
+      {/* <TabItem title="Deposit" selected={selectedTab === 105} onClick={() => handleSelect(105)} /> */}
+      {/* <TabItem title="Withdrawal" selected={selectedTab === 106} onClick={() => handleSelect(106)} /> */}
+      {/* <TabItem title="Transactions" selected={selectedTab === 108} onClick={() => handleSelect(108)} /> */}
+      {/* <TabItem title="Settings" selected={selectedTab === 109} onClick={() => handleSelect(109)} /> */}
       {specialTabs.map((tab) => {
         return <TabItem key={tab.id} title={tab.name} selected={selectedTab === tab.id} onClick={() => handleSelect(tab.id)} onDelete={() => deleteSpecialTab(tab)} id={tab.id} />
       })}

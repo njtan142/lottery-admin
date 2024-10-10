@@ -9,6 +9,7 @@ import { Palette } from '../../../../../shared/styled/theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ROLES } from '../../../../../settings/constants';
+import { Table, TableHead, TableRow, TableCell, ActionButton } from '../../../components/table';
 
 function AccountsContent() { // Templated
   const [accounts, setAccounts] = useState([]);
@@ -212,35 +213,6 @@ const AddAccountButton = styled.button`
 
   &:hover {
     /* background-color: ${Palette.Accent}; */
-  }
-`
-
-const Table = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-`
-
-const TableHead = styled.thead`
-  background-color: ${Palette.Primary300};
-`
-
-const TableRow = styled.tr`
-  border-bottom: 1px solid  ${Palette.Background300};
-`
-
-const TableCell = styled.td`
-  padding: 0.5em;
-  text-align: left;
-`
-
-const ActionButton = styled.button`
-  padding: 0.5em 1em;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${Palette.Accent};
   }
 `
 
